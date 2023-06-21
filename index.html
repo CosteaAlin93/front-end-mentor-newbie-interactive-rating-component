@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Interactive rating component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: ['Overpass', 'sans'],
+          },
+          extend: {
+            colors: {
+              orange: 'hsl(25, 97%, 53%)',
+              white: 'hsl(0, 0%, 100%)',
+              lightgray: 'hsl(217, 12%, 63%)',
+              mediumgray: 'hsl(216, 12%, 54%)',
+              darkblue: 'hsl(213, 19%, 18%)',
+              darkbluelighter: 'hsla(213, 18%, 21%, 1)',
+              verydarkblue: 'hsl(216, 12%, 8%)',
+            },
+          },
+        },
+      };
+    </script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Background div -->
+    <div
+      class="flex justify-center items-center bg-verydarkblue p-6 max-w-[375px] h-[600px] mx-auto md:max-w-[1440px] md:max-h-screen"
+    >
+      <!-- Card div -->
+      <div
+        id="card"
+        class="flex flex-col justify-start p-6 text-[15px] rounded-2xl bg-darkblue md:rounded-3xl md:p-9 md:max-w-[415px]"
+      >
+        <!-- Star icon -->
+        <div
+          class="bg-darkbluelighter flex justify-center items-center w-10 h-10 rounded-full mb-[16px] md:mb-7"
+        >
+          <img src="images/icon-star.svg" alt="" class="bg-[hsl(240, 12%, 54%)] w-[14px] h-[14px]" />
+        </div>
+        <!-- How did we do -->
+        <h2 class="text-white text-[24px] mb-3 font-bold md:text-[28px]">How did we do?</h2>
+        <!-- Paragraph -->
+        <p class="text-lightgray text-[14px] leading-5 mb-8 md:leading-6 md:text-[15px]">
+          Please let us know how we did with your support request. All feedback is appreciated to help us
+          improve our offering!
+        </p>
+        <!-- Ratings -->
+        <div class="flex flex-row justify-start space-x-5 mb-[24px] md:mb-[30px]">
+          <button
+            class="button flex items-center justify-center bg-darkbluelighter text-mediumgray font-bold rounded-full w-10 h-10 md:w-12 md:h-12 hover:bg-orange hover:text-white"
+          >
+            1
+          </button>
+          <button
+            class="button flex items-center justify-center bg-darkbluelighter text-mediumgray font-bold rounded-full w-10 h-10 md:w-12 md:h-12 hover:bg-orange hover:text-white"
+          >
+            2
+          </button>
+          <button
+            class="button flex items-center justify-center bg-darkbluelighter text-mediumgray font-bold rounded-full w-10 h-10 md:w-12 md:h-12 hover:bg-orange hover:text-white"
+          >
+            3
+          </button>
+          <button
+            class="button flex items-center justify-center bg-darkbluelighter text-mediumgray font-bold rounded-full w-10 h-10 md:w-12 md:h-12 hover:bg-orange hover:text-white"
+          >
+            4
+          </button>
+          <button
+            class="button flex items-center justify-center bg-darkbluelighter text-mediumgray font-bold rounded-full w-10 h-10 md:w-12 md:h-12 hover:bg-orange hover:text-white"
+          >
+            5
+          </button>
+        </div>
+        <!-- Submit -->
+        <button
+          id="submit"
+          class="submit w-full bg-orange rounded-3xl p-3 tracking-widest text-white font-bold text-[14px] uppercase mb-2 md:text-[15px] hover:bg-white hover:text-orange"
+        >
+          Submit
+        </button>
+        <p class="hidden alert text-center text-red-500 font-medium">Please select a rating!</p>
+      </div>
+      <!-- Thank you div -->
+      <div
+        id="thank"
+        class="hidden flex flex-col justify-center items-center text-center p-6 text-[15px] rounded-2xl bg-darkblue md:rounded-3xl md:p-9 md:max-w-[415px]"
+      >
+        <img src="images/illustration-thank-you.svg" alt="" class="w-32 h-auto mb-5" />
+        <p class="text-orange bg-darkbluelighter p-2 rounded-2xl mb-6">
+          You selected <span id="result"> </span> out of 5
+        </p>
+        <h2 class="text-white text-[24px] mb-3 font-bold md:text-[28px]">Thank you!</h2>
+        <p class="text-lightgray text-[14px] leading-5 mb-8 md:leading-6 md:text-[15px]">
+          We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to
+          get in touch!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
